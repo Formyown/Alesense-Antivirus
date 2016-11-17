@@ -1,0 +1,350 @@
+<xlue>
+	<control class="As.Metro.Home">
+		<attr_def></attr_def>
+		<method_def>
+			<HandleMsg file="MetroHome.xml.lua" func="HandleMsg"/>
+		</method_def>
+		<event_def>
+			<OnClickFunctionButton>
+				<param>
+					<int/>
+				</param>
+			</OnClickFunctionButton>
+		</event_def>
+		<objtemplate>
+			<children>	
+				<obj id="text1" class="TextObject">
+					<attr>
+						<left>20</left>
+						<top>-20</top>
+						<width>40</width>
+						<height>25</height>
+						<text>概览</text>
+						<texttype>gdi</texttype>
+						<textcolor>Color.MetroText</textcolor>
+						<font>Font.Nor18</font>
+					</attr>		
+				</obj>
+				<obj id="Status" class="As.MetroDisplay">
+					<attr>
+						<left>20</left>
+						<top>40</top>
+						<width>255</width>
+						<height>130</height>
+						<Text>Status</Text>
+						<Title>计算机状态</Title>
+					</attr>	
+					<children>
+						<obj id="StatusText" class="TextObject">
+							<attr>
+								<left>15</left>
+								<top>15</top>
+								<width>340</width>
+								<height>25</height>
+								<text>您的计算机受到保护，目前安全。</text>
+								<textcolor>Color.LightBlue</textcolor>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+						<obj id="text2" class="TextObject">
+							<attr>
+								<left>15</left>
+								<top>15 + 28</top>
+								<width>100</width>
+								<height>25</height>
+								<text>性能等级:</text>
+								<textcolor>Color.MetroText</textcolor>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+						<obj id="text3" class="TextObject">
+							<attr>
+								<left>15</left>
+								<top>15 + 28 + 28</top>
+								<width>100</width>
+								<height>25</height>
+								<text>防护等级:</text>
+								<textcolor>Color.MetroText</textcolor>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+
+						<obj id="PerformanceLevel" class="TextObject">
+							<attr>
+								<left>85</left>
+								<top>15 + 28</top>
+								<width>100</width>
+								<height>25</height>
+								<text>高</text>
+								<textcolor>Color.LightBlue</textcolor>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+						<obj id="ProtectLevel" class="TextObject">
+							<attr>
+								<left>85</left>
+								<top>15 + 28 + 28</top>
+								<width>100</width>
+								<height>25</height>
+								<text>最高</text>
+								<textcolor>Color.LightBlue</textcolor>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+
+						<obj id="ScanSetting" class="As.button">
+							<attr>
+								<left>210</left>
+								<top>17 + 28</top>
+								<width>20</width>
+								<height>20</height>
+								<DownBkgID>Res.Setting.Ico.Nor</DownBkgID>
+								<HoverBkgID>Res.Setting.Ico.Hover</HoverBkgID>
+								<NormalBkgID>Res.Setting.Ico.Nor</NormalBkgID>
+								<UseBitmap>true</UseBitmap>
+								<zorder>1000</zorder>
+							</attr>
+						</obj>
+						<obj id="ProtectSetting" class="As.button">
+							<attr>
+								<left>210</left>
+								<top>17 + 28 + 28</top>
+								<width>20</width>
+								<height>20</height>
+								<DownBkgID>Res.Setting.Ico.Nor</DownBkgID>
+								<HoverBkgID>Res.Setting.Ico.Hover</HoverBkgID>
+								<NormalBkgID>Res.Setting.Ico.Nor</NormalBkgID>
+								<UseBitmap>true</UseBitmap>
+								<zorder>1000</zorder>
+							</attr>
+						</obj>
+					</children>
+				</obj>
+				<obj id="Update" class="As.MetroDisplay">
+					<attr>
+						<left>20</left>
+						<top>185</top>
+						<width>255</width>
+						<height>104</height>
+						<Text>Update</Text>
+						<Title>更新</Title>
+					</attr>	
+					<children>
+						<obj id="Version" class="TextObject">
+							<attr>
+								<left>15</left>
+								<top>15</top>
+								<width>120</width>
+								<height>25</height>
+								<text>版本: 0.00.01</text>
+								<textcolor>Color.MetroText</textcolor>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+						<obj id="DataBaseVersion" class="TextObject">
+							<attr>
+								<left>15</left>
+								<top>15 + 28</top>
+								<width>120</width>
+								<height>25</height>
+								<text>数据库: 0523.01</text>
+								<textcolor>Color.MetroText</textcolor>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+						<obj id="VersionSetting" class="As.button">
+							<attr>
+								<left>210</left>
+								<top>17</top>
+								<width>20</width>
+								<height>20</height>
+								<DownBkgID>Res.Setting.Ico.Nor</DownBkgID>
+								<HoverBkgID>Res.Setting.Ico.Hover</HoverBkgID>
+								<NormalBkgID>Res.Setting.Ico.Nor</NormalBkgID>
+								<UseBitmap>true</UseBitmap>
+								<zorder>1000</zorder>
+							</attr>
+						</obj>
+						<obj id="DatabaseVerSetting" class="As.button">
+							<attr>
+								<left>210</left>
+								<top>17 + 28 </top>
+								<width>20</width>
+								<height>20</height>
+								<DownBkgID>Res.Setting.Ico.Nor</DownBkgID>
+								<HoverBkgID>Res.Setting.Ico.Hover</HoverBkgID>
+								<NormalBkgID>Res.Setting.Ico.Nor</NormalBkgID>
+								<UseBitmap>true</UseBitmap>
+								<zorder>1000</zorder>
+							</attr>
+						</obj>
+					</children>
+				</obj>
+
+
+				<obj id="text5" class="TextObject">
+					<attr>
+						<left>320</left>
+						<top>-20</top>
+						<width>40</width>
+						<height>25</height>
+						<text>防护</text>
+						<textcolor>Color.MetroText</textcolor>
+						<font>Font.Nor18</font>
+					</attr>		
+				</obj>
+				<obj id="Protect" class="As.MetroDisplay">
+					<attr>
+						<left>320</left>
+						<top>40</top>
+						<width>345</width>
+						<height>249</height>
+						<Text>Protection</Text>
+						<Title>实时防护</Title>
+
+					</attr>	
+					<children>
+						<obj id="text6" class="TextObject">
+							<attr>
+								<left>15</left>
+								<top>15</top>
+								<width>100</width>
+								<height>25</height>
+								<text>实时防护</text>
+								<textcolor>Color.MetroText</textcolor>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+						<obj id="ProtectionSwitch" class="SwitchButton">
+							<attr>
+								<left>90</left>
+								<top>15</top>
+								<width>60</width>
+								<height>22</height>
+								<switch>true</switch>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+
+
+						<obj id="text7" class="TextObject">
+							<attr>
+								<left>190</left>
+								<top>15</top>
+								<width>100</width>
+								<height>25</height>
+								<text>静默模式</text>
+								<textcolor>Color.MetroText</textcolor>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+						<obj id="SilentSwitch" class="SwitchButton">
+							<attr>
+								<left>270</left>
+								<top>15</top>
+								<width>60</width>
+								<height>22</height>
+								<switch>true</switch>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+
+						<obj id="StartProgramPath" class="TextObject">
+							<attr>
+								<left>15</left>
+								<top>15 + 28</top>
+								<width>father.width - 30</width>
+								<height>25</height>
+								<text>无</text>
+								<textcolor>Color.MetroText</textcolor>
+								<font>Font.Nor15</font>
+								<wordellipsis>1</wordellipsis>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+
+						<obj id="ProtectValueTitle" class="TextObject">
+							<attr>
+								<left>15</left>
+								<top>110</top>
+								<width>50</width>
+								<height>50</height>
+								<text>防护&#x0A;压力</text>
+								<textcolor>Color.MetroText</textcolor>
+								<multiline>1</multiline>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+
+						<obj id="ProtectValue" class="TextObject">
+							<attr>
+								<left>60</left>
+								<top>95</top>
+								<width>110</width>
+								<height>60</height>
+								<text>0%</text>
+								<textcolor>Color.MetroGreen</textcolor>
+								<font>Font.Nor50</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+
+						<obj id="ProtectInfo" class="TextObject">
+							<attr>
+								<left>175</left>
+								<top>110</top>
+								<width>300</width>
+								<height>60</height>
+								<text>防护压力较小&#x0A;继续保持健康使用习惯</text>
+								<textcolor>Color.MetroText</textcolor>
+								<multiline>1</multiline>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+
+						<obj id="ScanedCount" class="TextObject">
+							<attr>
+								<left>15</left>
+								<top>15 + 170</top>
+								<width>father.width - 30</width>
+								<height>25</height>
+								<text>今日检测应用程序：0个</text>
+								<textcolor>Color.MetroText</textcolor>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+						<obj id="VirusCount" class="TextObject">
+							<attr>
+								<left>210</left>
+								<top>15 + 170</top>
+								<width>father.width - 240</width>
+								<height>25</height>
+								<text>发现：0个病毒</text>
+								<halign>right</halign>
+								<textcolor>Color.MetroText</textcolor>
+								<font>Font.Nor15</font>
+								<zorder>1000</zorder>
+							</attr>		
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="MetroHome.xml.lua" func="OnInitControl" />
+			</eventlist>
+		</objtemplate>
+	</control>
+
+</xlue>

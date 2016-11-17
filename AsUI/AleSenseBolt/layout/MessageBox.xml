@@ -1,0 +1,182 @@
+<xlue>
+	<hostwndtemplate id = "MessageBox.Wnd" class =  "ModalHostWnd">
+		<attr>
+			<title>MessageBox</title>
+			<left>0</left>
+			<top>0</top>
+			<width>500</width>
+			<height>200</height>
+			<layered>1</layered>
+			<fps>30</fps>
+		</attr>
+		<eventlist>
+			<event name = "OnCreate" 		file = "MessageBox.xml.lua" func = "OnCreate" />
+			<event name = "OnDestroy" 		file = "MessageBox.xml.lua" func = "OnDestroy"/>
+			<event name = "OnShowWindow" 	file = "MessageBox.xml.lua" func = "OnShowWindow"/>
+		</eventlist>
+	</hostwndtemplate>
+	
+	<objtreetemplate id = "MessageBox.Tree" class = "ObjectTreeTemplate">
+		<attr>
+			<left>-200</left>
+			<top>-200</top>
+			<width>2000</width>
+			<height>2000</height>		
+		</attr>
+		
+		<obj id = "layout" class = "LayoutObject" >
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>500</width>
+				<height>200</height>
+			</attr>
+			
+					<children>
+						<obj id = "background" class = "TextureObject" >
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>father.height</height>
+								<texture>Res.MessageBox.Bkg</texture>
+							</attr>
+							<children>
+								<obj id = "caption"	class = "CaptionObject" >
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width</width>
+										<height>father.height</height>
+									</attr>
+									<children>
+										<obj id = "titletext"	class = "TextObject">
+											<attr>
+												<left>0</left>
+												<top>10</top>
+												<width>father.width</width>
+												<height>22</height>
+												<font>Font.Nor16</font>
+												<textcolor>Color.White</textcolor>
+												<valign>center</valign>
+												<halign>center</halign>
+											</attr>
+										</obj>
+										
+										<obj id = "closebtn" class = "UI.Button">
+											<attr>
+												<left>father.width - 10 - 41</left>
+												<top>12</top>
+												<width>40</width>
+												<height>22</height>
+												<BkgNormalTextureID>Res.MsgButton.CloseBtn.Nor</BkgNormalTextureID>
+												<BkgHoverTextureID>Res.MsgButton.CloseBtn.Hover</BkgHoverTextureID>
+												<BkgDownTextureID>Res.MsgButton.CloseBtn.Hover</BkgDownTextureID>
+												<BFocusShowDown>1</BFocusShowDown>
+											</attr>
+											<eventlist>
+												<event name = "OnClick" file = "MessageBox.xml.lua" func = "CloseBtn_OnClick" />
+											</eventlist>
+										</obj>
+										
+										<obj id = "icon" class = "ImageObject">
+											<attr>
+												<left>45</left>
+												<top>60</top>
+												<width>200</width>
+												<height>200</height>
+												<image>Res.MsgIco.Query</image>
+											</attr>
+										</obj>
+										
+										<obj id = "noticetext"	class = "TextObject">
+											<attr>
+												<left>165</left>
+												<top>80</top>
+												<width>280</width>
+												<height>60</height>
+												<multiline>1</multiline>
+												<font>Font.Nor16</font>
+												<textcolor>Color.White</textcolor>
+
+											</attr>
+										</obj>
+										
+										<obj id = "button1" class = "UI.Button">
+											<attr>
+												<left>352</left>
+												<top>139</top>
+												<width>72</width>
+												<height>24</height>
+												<visible>0</visible>
+												<TextHAlign>center</TextHAlign>
+												<TextVAlign>center</TextVAlign>
+												<BkgNormalTextureID>Res.MsgButton.Nor</BkgNormalTextureID>
+												<BkgHoverTextureID>Res.MsgButton.Hover</BkgHoverTextureID>
+												<BkgDownTextureID>Res.MsgButton.Hover</BkgDownTextureID>
+												<BkgDisableTextureID>Res.MsgButton.Nor</BkgDisableTextureID>
+												<TextNormalColorID>Color.White</TextNormalColorID>
+												<TextHoverColorID>Color.White</TextHoverColorID>
+												<TextDownColorID>Color.Gray</TextDownColorID>
+												<TextDisableColorID>Color.Gray</TextDisableColorID>
+												<BFocusShowDown>1</BFocusShowDown>
+											</attr>
+											<eventlist>
+												<event name = "OnClick" file = "MessageBox.xml.lua" func = "Button_OnClick" />
+											</eventlist>
+										</obj>
+										
+										<obj id = "button2" class = "UI.Button">
+											<attr>
+												<left>262</left>
+												<top>139</top>
+												<width>72</width>
+												<height>24</height>
+												<visible>0</visible>
+												<TextHAlign>center</TextHAlign>
+												<TextVAlign>center</TextVAlign>
+												<BkgNormalTextureID>Res.MsgButton.Nor</BkgNormalTextureID>
+												<BkgHoverTextureID>Res.MsgButton.Hover</BkgHoverTextureID>
+												<BkgDownTextureID>Res.MsgButton.Hover</BkgDownTextureID>
+												<BkgDisableTextureID>Res.MsgButton.Nor</BkgDisableTextureID>
+												<TextNormalColorID>Color.White</TextNormalColorID>
+												<TextHoverColorID>Color.White</TextHoverColorID>
+												<TextDownColorID>Color.Gray</TextDownColorID>
+												<TextDisableColorID>Color.Gray</TextDisableColorID>
+												<BFocusShowDown>1</BFocusShowDown>
+											</attr>
+											<eventlist>
+												<event name = "OnClick" file = "MessageBox.xml.lua" func = "Button_OnClick" />
+											</eventlist>
+										</obj>
+										
+										<obj id = "button3" class = "UI.Button">
+											<attr>
+												<left>100</left>
+												<top>139</top>
+												<width>80</width>
+												<height>23</height>
+												<visible>0</visible>
+												<TextHAlign>center</TextHAlign>
+												<TextVAlign>center</TextVAlign>
+												<BkgNormalTextureID>texture.msgbox.btn.bkg.normal</BkgNormalTextureID>
+												<BkgHoverTextureID>texture.msgbox.btn.bkg.hover</BkgHoverTextureID>
+												<BkgDownTextureID>texture.msgbox.btn.bkg.down</BkgDownTextureID>
+												<BkgDisableTextureID>texture.msgbox.btn.bkg.disable</BkgDisableTextureID>
+											</attr>
+											<eventlist>
+												<event name = "OnClick" file = "MessageBox.xml.lua" func = "Button_OnClick" />
+											</eventlist>
+										</obj>
+									</children>
+								</obj>
+							</children>
+						</obj>
+			</children>
+			<eventlist>
+				<event name = "OnInitControl" 	file = "MessageBox.xml.lua" func = "OnInitControl" />
+				<event name = "OnKeyDown" 		file = "MessageBox.xml.lua" func = "OnKeyDown" />
+			</eventlist>
+		</obj>
+	</objtreetemplate>
+</xlue>

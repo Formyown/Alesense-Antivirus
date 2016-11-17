@@ -1,0 +1,288 @@
+<xlue>
+	<control class="ListCtrl">
+		<method_def>
+			<SetSel file="ListCtrl.xml.lua" func="List_SetSel" />
+			<GetSel file="ListCtrl.xml.lua" func="List_GetSel" />
+			<InsertItem file="ListCtrl.xml.lua" func="InsertItem" />
+			<DeleteAllItems file="ListCtrl.xml.lua" func="DeleteAllItems" />
+			<SetAdjust file="ListCtrl.xml.lua" func="SetAdjust" />
+			<MouseWheel file="ListCtrl.xml.lua" func="MouseWheel" />
+			<UpdateScroll file="ListCtrl.xml.lua" func="UpdateScroll" />
+			<AddNextItem file="ListCtrl.xml.lua" func="AddNextItem" />
+			<AddPrevItem file="ListCtrl.xml.lua" func="AddPrevItem" />
+			<SetTrueTotal file="ListCtrl.xml.lua" func="SetTrueTotal" />
+		</method_def>
+		<event_def>
+			<OnSelectChanged />
+			<OnGetNextItem />
+			<OnGetPrevItem />
+		</event_def>
+		<objtemplate>
+			<children>
+				<obj id="list.bkg" class="TextureObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<texture>texture.edit.bkg.normal</texture>
+						<zorder>1</zorder>
+					</attr>
+					<children>
+						
+						<obj id="header" class="LayoutObject">
+							<attr>
+								<left>2</left>
+								<top>2</top>
+								<width>father.width-4 - 15</width>
+								<height>25</height>
+							</attr>
+							<children>
+
+								<obj id="Header.Bkg.id" class="ImageObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width</width>
+										<height>father.height</height>
+										<drawmode>1</drawmode>
+										<image>bitmap.listctrl.header.bkg</image>
+									</attr>
+									<children>
+										<obj id="Item.Bkg.id" class="TextureObject">
+											<attr>
+												<limitchild>1</limitchild>
+												<left>0</left>
+												<top>0</top>
+												<width>father.width</width>
+												<height>father.height</height>
+												<texture>Res.ListTitle.Bkg</texture>
+											</attr>
+											<children>						
+												<obj id="Item.Text.id" class="TextObject">
+													<attr>
+														<width>100</width>
+														<left>10</left>
+														<height>father.height</height>
+														<font>Font.Nor14</font>
+														<texttype>gdi</texttype>
+														<textcolor>Color.White</textcolor>
+														<valign>center</valign>
+														<text>风险对象</text>
+													</attr>
+												</obj>
+												<obj id="Item.Text.value" class="TextObject">
+													<attr>
+														<left>305</left>
+														<width>father.width</width>
+														<height>father.height</height>
+														<font>Font.Nor14</font>
+														<textcolor>Color.White</textcolor>
+														<valign>center</valign>
+														<texttype>gdi</texttype>
+														<text>风险类型</text>
+													</attr>
+												</obj>
+												<obj id="Item.Text.value" class="TextObject">
+													<attr>
+														<left>440</left>
+														<width>father.width</width>
+														<height>father.height</height>
+														<font>Font.Nor14</font>
+														<textcolor>Color.White</textcolor>
+														<valign>center</valign>
+														<texttype>gdi</texttype>
+														<text>处理方法</text>
+													</attr>
+												</obj>
+											</children>
+										</obj>
+										
+										
+									</children>
+								</obj>
+							</children>
+						</obj>
+						<obj id="content" class="LayoutObject">
+							<attr>
+								<left>3</left>
+								<top>28</top>
+								<width>father.width - 6 - 15</width>
+								<height>father.height - 4 - 25</height>
+								<limitchild>1</limitchild>
+							</attr>	
+							<eventlist>
+								<event name="OnMouseWheel" file="ListCtrl.xml.lua" func="OnMouseWheel" />
+							</eventlist>
+						</obj>
+						<obj id="vscroll" class="ScrollBar">
+							<attr>
+								<left>father.width - 17</left>
+								<top>2</top>
+								<width>15</width>
+								<height>father.height - 4 </height>
+								<Type>1</Type>
+								<NormalBkn>Res.Scroll.Bkg</NormalBkn>
+								<HoverBkn>Res.Scroll.Bkg</HoverBkn>
+								<ThumbBtn_normal>Res.Scroll.Fore.Dark</ThumbBtn_normal>
+								<ThumbBtn_hover>Res.Scroll.Fore.Light</ThumbBtn_hover>
+								<ThumbBtn_down>Res.Scroll.Fore.Light</ThumbBtn_down>
+								<SideBtnLength>0</SideBtnLength>
+								<ThumbBtnLength>49</ThumbBtnLength>
+								<ThumbBtnWidth>11</ThumbBtnWidth>
+								<ThumbRightMagrin>2</ThumbRightMagrin>
+
+								<PageSize>0</PageSize>
+								<RangeBegin>0</RangeBegin>
+								<RangeEnd>0</RangeEnd>
+								<ScrollPos>0</ScrollPos>
+								<zorder>100000</zorder>
+							</attr>
+							<eventlist>
+								<event name="OnVScroll" file="ListCtrl.xml.lua" func="OnVScroll" />
+								<event name="OnScrollBarMouseWheel" file="ListCtrl.xml.lua" func="OnScrollBarMouseWheel" />								
+							</eventlist>
+						</obj>
+					</children>
+				</obj>				
+			</children>
+			<eventlist>
+				<event name="OnBind" file="ListCtrl.xml.lua" func="OnBind" />
+				<event name="OnInitControl" file="ListCtrl.xml.lua" func="List_OnInitControl" />
+				<event name="OnPosChange" file="ListCtrl.xml.lua" func="OnPosChange" />
+			</eventlist>
+		</objtemplate>
+	</control>
+	<control class="ListItem">
+		<attr_def>
+			<attr name="Name" type="string" />
+			<attr name="Path" type="string" />
+			<attr name="Type" type="string" />
+			<attr name="Trusted" type="bool" />
+			<attr name="Selected" type="bool" />
+			<attr name="Index" type="int" />
+		</attr_def>
+		<method_def>
+			<SetSel file="ListCtrl.xml.lua" func="SetSel" />
+		</method_def>
+		<objtemplate>
+			<children>
+				<obj id="item" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>50</height>
+					</attr>
+					<children>
+						<obj id="background" class="TextureObject">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>father.height</height>
+								<!--<texture>Res.Scanning.Item.Red</texture>-->
+							</attr>
+							<children>
+								<obj id="VirusType" class="TextObject">
+									<attr>
+										<top>5</top>
+										<left>10</left>
+										<width>230</width>
+										<height>father.height/2</height>
+										<font>Font.Nor15</font>
+										<textcolor>Color.Red</textcolor>
+									</attr>
+								</obj>
+								<obj id="Path" class="TextObject">
+									<attr>
+										<top>father.height/2 - 2</top>
+										<left>10</left>
+										<width>260</width>
+										<height>father.height/2</height>
+										<wordellipsis>1</wordellipsis>
+										<valign>center</valign>
+										<font>Font.Nor15</font>
+										<textcolor>Color.White</textcolor>
+									</attr>
+								</obj>
+						<obj id="CalcTextObj" class ="TextObject">	
+							<attr>	
+								<text></text>
+								<left>-1000</left>
+								<top>-1000</top>
+								<width>330</width>
+								<height>40</height>
+								<font>Font.Nor15</font>
+								<wordellipsis>1</wordellipsis>
+								<textcolor>Color.White</textcolor>
+							</attr>
+						</obj>
+								<obj id="VirusTypeBkg" class="TextureObject">
+									<attr>
+										<top>12</top>
+										<left>300</left>
+										<width>65</width>
+										<height>25</height>
+										<texture>Res.VirusType.Bkg</texture>
+									</attr>
+									<children>
+										<obj id="CVirusType" class="TextObject">
+											<attr>
+												<text>后门</text>
+												<width>father.width</width>
+												<height>father.height</height>
+
+												<valign>center</valign>
+												<halign>center</halign>
+												<font>Font.Nor15</font>
+												<textcolor>Color.White</textcolor>
+											</attr>
+										</obj>
+									</children>
+								</obj>
+								<obj id="Text1" class="TextObject">
+									<attr>
+										<text>删除文件</text>
+										<top>0</top>
+										<left>440</left>
+										<width>100</width>
+										<height>father.height</height>
+										
+										<valign>center</valign>
+										<font>Font.Nor15</font>
+										<textcolor>Color.White</textcolor>
+									</attr>
+								</obj>
+								<obj id="AddToTrust" class="TextObject">
+									<attr>
+										<text>添加信任</text>
+										<top>0</top>
+										<left>550</left>
+										<width>100</width>
+										<height>father.height</height>
+										
+										<valign>center</valign>
+										<font>Font.Nor15</font>
+										<textcolor>Color.Gray</textcolor>
+									</attr>
+									<eventlist>
+										<event name="OnLButtonDown" file="ListCtrl.xml.lua" func="OnAddToTrustClick" />	
+									</eventlist>
+								</obj>
+
+							</children>
+						</obj>						
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="ListCtrl.xml.lua" func="OnInitControl" />
+				<event name="OnLButtonDown" file="ListCtrl.xml.lua" func="OnLButtonDown" />
+				<event name="OnLButtonDbClick" file="ListCtrl.xml.lua" func="OnLButtonDbClick" />
+				<event name="OnRButtonDbClick" file="ListCtrl.xml.lua" func="OnRButtonDbClick" />
+				<event name="OnMouseWheel" file="ListCtrl.xml.lua" func="OnMouseWheel_Item" />
+			</eventlist>
+		</objtemplate>
+	</control>
+</xlue>

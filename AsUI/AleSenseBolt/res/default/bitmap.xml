@@ -1,0 +1,83 @@
+<XLUE>
+<resource>
+	<!--普通的位图资源-->
+	<bitmap id= "Res.BackgroundImg"  path="bitmap\background.png" />
+	<texture id="Res.NaviBkgImg" type="NineInOne" image="bitmap\navi_bkg.png" /> 
+	<bitmap id= "Res.MetroBlock"  path="bitmap\metro.png" />
+
+
+	<bitmap id= "Res.Cloud"  path="bitmap\cloud.png" />
+
+	
+	<texture id="Res.Scroll.Bkg" type="NineInOne" image="bitmap\scroll_bkg.png" /> 
+	<texture id="Res.Scroll.Fore.Dark" type="NineInOne" image="bitmap\scroll_fore_dark.png" /> 
+	<texture id="Res.Scroll.Fore.Light" type="NineInOne" image="bitmap\scroll_fore_light.png" /> 
+
+	<texture id="Res.VirusType.Bkg" type="NineInOne" image="bitmap\virtype_bkg_2.png" /> 
+
+
+	<texture id="Res.ListTitle.Bkg" type="NineInOne" image="bitmap\list_title_bkg.png" /> 
+	<!--纹理贴图资源 -->
+	<!-- 纹理的类型有 
+	：
+	Stretch,Normal,Tile   拉伸，不拉伸，平铺
+	NineInOne,ThreeInOneH,ThreeInOneV,FiveInOneH,FiveInOneV,  迅雷传统用的固定区域映射
+	以及自定义映射   
+
+	通过定义这些类型，可以方便的让位图按预期意图进行拉伸，同时也方便设计师的工作
+	-->
+	<imagelist id="Res.ControlBox.Button" vertical="0" splitter="1" varyblock="0" blocksize="16" image="bitmap\control_button.png" />
+		<bitmap id="Res.ControlBox.ToolButton"  imagelist="Res.ControlBox.Button" index="1"/>
+		<bitmap id="Res.ControlBox.MiniButton"  imagelist="Res.ControlBox.Button" index="2"/>
+		<bitmap id="Res.ControlBox.CloseButton"  imagelist="Res.ControlBox.Button" index="3"/>
+
+	<imagelist id="Res.ControlBox.Button.Hover" vertical="0" splitter="1" varyblock="0" blocksize="16" image="bitmap\control_button_hover.png" />
+		<bitmap id="Res.ControlBox.ToolButton.Hover"  imagelist="Res.ControlBox.Button.Hover" index="1"/>
+		<bitmap id="Res.ControlBox.MiniButton.Hover"  imagelist="Res.ControlBox.Button.Hover" index="2"/>
+		<bitmap id="Res.ControlBox.CloseButton.Hover"  imagelist="Res.ControlBox.Button.Hover" index="3"/>
+
+	<imagelist id="Res.Metro.Status" vertical="0" splitter="1" blocksize="168" image="bitmap\metro_status.png" />
+		<bitmap id="Res.Metro.Status.Safe"  imagelist="Res.Metro.Status" index="1"/>
+		<bitmap id="Res.Metro.Status.Unsafe"  imagelist="Res.Metro.Status" index="2"/>
+		<bitmap id="Res.Metro.Status.Warning"  imagelist="Res.Metro.Status" index="3"/>
+
+	<imagelist id="Res.Metro.Ico" vertical="0" splitter="1" varyblock="1" color="RGB(255,0,255)" image="bitmap\metro_ico.png" />
+		<bitmap id="Res.Metro.Ico.Scan"  imagelist="Res.Metro.Ico" index="1"/>
+		<bitmap id="Res.Metro.Ico.Defence"  imagelist="Res.Metro.Ico" index="2"/>
+		<bitmap id="Res.Metro.Ico.Message"  imagelist="Res.Metro.Ico" index="3"/>
+		<bitmap id="Res.Metro.Ico.Update"  imagelist="Res.Metro.Ico" index="4"/>
+		<bitmap id="Res.Metro.Ico.Setting"  imagelist="Res.Metro.Ico" index="5"/>
+		<bitmap id="Res.Metro.Ico.Isolate"  imagelist="Res.Metro.Ico" index="6"/>
+
+	<imagelist id="Res.Setting.Ico" vertical="0" splitter="1" varyblock="1" color="RGB(255,0,255)" image="bitmap\setting_ico.png" />
+		<bitmap id="Res.Setting.Ico.Nor"  imagelist="Res.Setting.Ico" index="1"/>
+		<bitmap id="Res.Setting.Ico.Hover"    imagelist="Res.Setting.Ico" index="2"/>
+		<bitmap id="Res.Setting.Ico.Down"    imagelist="Res.Setting.Ico" index="3"/>
+
+	<texture id="Res.Scanning.Item.Red" type="NineInOne" image="bitmap\scan_item.png" /> 
+	<texture id="Res.Progress.Fore" type="NineInOne" image="bitmap\progress_fore.png" /> 
+	<texture id="Res.Progress.Bkg" type="NineInOne" image="bitmap\progress_bkg.png" /> 
+
+	<texture id="Res.Button.Hover" type="NineInOne" image="bitmap\button_hover.png" /> 
+	<texture id="Res.Button.Down" type="NineInOne" image="bitmap\button_down.png" /> 
+	<texture id="Res.Button.Nor" type="NineInOne" image="bitmap\button_nor.png" /> 
+	<texture id="Res.Button.Disable" type="NineInOne" image="bitmap\button_disable.png" /> 
+
+	<texture id="Res.RectBkg" type="NineInOne" image="bitmap\rect_bkg.png" /> 
+	<texture id="Res.ScanSelect" type="NineInOne" image="bitmap\scan_select_button.png" />
+	
+	<texture id="Res.MessageBox.Bkg" type="NineInOne" image="bitmap\msgbox_bkg.png" />
+	<texture id="Res.MsgButton.Hover" type="NineInOne" image="bitmap\msg_btn_hover.png" />
+	<texture id="Res.MsgButton.Nor" type="NineInOne" image="bitmap\msg_btn_nor.png" />
+	<texture id="Res.MsgButton.CloseBtn.Nor" type="NineInOne" image="bitmap\msg_btn_close_nor.png" />
+	<texture id="Res.MsgButton.CloseBtn.Hover" type="NineInOne" image="bitmap\msg_btn_close_hover.png" />
+
+	<bitmap id= "Res.MsgIco.Query"  path="bitmap\msg_ico_query.png" />
+	<bitmap id= "Res.MsgIco.Warning"  path="bitmap\msg_ico_warning.png" />
+	<bitmap id= "Res.MsgIco.Info"  path="bitmap\msg_ico_info.png" />
+
+	<bitmap id= "Res.PopWin.Bkg.Warning"  path="bitmap\popwin_bkg_warning.png" />
+	<bitmap id= "Res.PopWin.Bkg.Info"  path="bitmap\popwin_bkg_info.png" />
+
+</resource>
+</XLUE>

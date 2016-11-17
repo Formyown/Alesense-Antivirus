@@ -1,0 +1,49 @@
+﻿<XLUE>
+<resource>
+  <!--下面这个字体的facename最为常用，使用系统的默认字体-->	
+  <font id="Font.Button" height="16" facename="点阵字体" />
+  <font id="Font.Nor14" height="14" facename="点阵字体" />
+  <font id="Font.Nor15" height="15" facename="微软雅黑" />
+  <font id="Font.Nor16" height="16" facename="微软雅黑" />
+  <font id="Font.Nor18" height="18" facename="微软雅黑" />
+  <font id="Font.Nor50" height="50" facename="微软雅黑" />
+  <font id="Font.Nor25" height="25" facename="微软雅黑" />
+  <font id="Font.Nor" height="18" facename="点阵字体" />
+  <font id="Font.Navi" height="19" facename="点阵字体" />
+  <font id="Font.Navi.Selected" height="19" facename="点阵字体" />
+  <font id="Font.Metro" height="14" facename="点阵字体" />
+ <curve id="Curve.Out" type="bspline">
+	<controlpoint  tp="0.000000" sp="0.000000"/>
+	<controlpoint  tp="0.222527" sp="0.073034"/>
+	<controlpoint  tp="0.769231" sp="0.272472"/>
+	<controlpoint  tp="0.953297" sp="0.550562"/>
+	<controlpoint  tp="0.997253" sp="1.000000"/>
+ </curve>
+ <curve id="Curve.In" type="bspline">
+<controlpoint  tp="0.000000" sp="0.000000"/>
+<controlpoint  tp="0.131868" sp="0.250000"/>
+<controlpoint  tp="0.291209" sp="0.550562"/>
+<controlpoint  tp="0.505495" sp="0.873596"/>
+<controlpoint  tp="0.997253" sp="1.000000"/>
+</curve>
+<curve id="Curve.Alpha" type="bezier">
+<controlpoint  tp="0.000000" sp="0.000000"/>
+<controlpoint  tp="0.368132" sp="1.325843"/>
+<controlpoint  tp="0.557692" sp="1.300562"/>
+<controlpoint  tp="0.997253" sp="0.000000"/>
+</curve>
+<curve id="Curve.Jmp" type="bspline">
+<controlpoint  tp="0.000000" sp="0.000000"/>
+<controlpoint  tp="0.142857" sp="1.129213"/>
+<controlpoint  tp="0.587912" sp="0.834270"/>
+<controlpoint  tp="0.917582" sp="0.898876"/>
+<controlpoint  tp="0.997253" sp="1.000000"/>
+</curve>
+<curve id="Curve.Metro" type="bspline">
+<controlpoint  tp="0.000000" sp="0.000000"/>
+<controlpoint  tp="0.002747" sp="0.724719"/>
+<controlpoint  tp="0.359890" sp="0.997191"/>
+<controlpoint  tp="0.997253" sp="1.000000"/>
+</curve>
+</resource>
+</XLUE>

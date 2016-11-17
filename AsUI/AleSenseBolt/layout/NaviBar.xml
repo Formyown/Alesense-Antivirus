@@ -1,0 +1,149 @@
+<xlue>
+	<control class="As.NaviBar">
+		<attr_def>
+			
+		</attr_def>
+		<method_def>
+			<Hide file="NaviBar.xml.lua" func="Hide"/>
+			<Navi file="NaviBar.xml.lua" func="Navi"/>
+		</method_def>
+		<event_def>
+			<!--定义按下按钮事件-->
+			<OnNavi>
+				<param>
+					<int/>
+				</param>
+			</OnNavi>
+		</event_def>
+		<objtemplate>
+			<children>
+				<obj id="Layout" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						
+					</attr>
+					<children>
+						<obj id="BackLayout" class="LayoutObject">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>father.height</height>
+							
+							</attr>
+							<children>
+								<obj id="BkgImg" class="TextureObject">
+									<attr>
+										<left>-5</left>
+										<top>25</top>
+										<width>45</width>
+										<height>8</height>
+										<zorder>100</zorder>
+										<texture>Res.NaviBkgImg</texture>
+									</attr>		
+								</obj>
+
+								<obj id="Home" class="TextObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>40</width>
+										<height>25</height>
+										<text>主页</text>
+										<textcolor>Color.White</textcolor>
+										<font>Font.Navi</font>
+										<zorder>100</zorder>
+									</attr>		
+									<eventlist>
+										<event name="OnMouseEnter" file="NaviBar.xml.lua" func="OnMouseEnter" />
+										<event name="OnMouseLeave" file="NaviBar.xml.lua" func="OnMouseLeave" />
+										<event name="OnLButtonDown" file="NaviBar.xml.lua" func="OnMouseClick" />
+									</eventlist>
+								</obj>
+
+								<obj id="Scan" class="TextObject">
+									<attr>
+										<left>62</left>
+										<top>0</top>
+										<width>40</width>
+										<height>25</height>
+										<text>扫描</text>
+										<textcolor>Color.Gray</textcolor>
+										<font>Font.Navi</font>
+										<zorder>100</zorder>
+									</attr>		
+									<eventlist>
+										<event name="OnMouseEnter" file="NaviBar.xml.lua" func="OnMouseEnter" />
+										<event name="OnMouseLeave" file="NaviBar.xml.lua" func="OnMouseLeave" />
+										<event name="OnLButtonDown" file="NaviBar.xml.lua" func="OnMouseClick" />
+									</eventlist>
+								</obj>
+
+								<obj id="Update" class="TextObject">
+									<attr>
+										<left>124</left>
+										<top>0</top>
+										<width>40</width>
+										<height>25</height>
+										<text>更新</text>
+										<textcolor>Color.Gray</textcolor>
+										<font>Font.Navi</font>
+										<zorder>100</zorder>
+									</attr>		
+									<eventlist>
+										<event name="OnMouseEnter" file="NaviBar.xml.lua" func="OnMouseEnter" />
+										<event name="OnMouseLeave" file="NaviBar.xml.lua" func="OnMouseLeave" />
+										<event name="OnLButtonDown" file="NaviBar.xml.lua" func="OnMouseClick" />
+									</eventlist>
+								</obj>
+
+								<obj id="SecurityCenter" class="TextObject">
+									<attr>
+										<left>186</left>
+										<top>0</top>
+										<width>80</width>
+										<height>25</height>
+										<text>安全中心</text>
+										<textcolor>Color.Gray</textcolor>
+										<font>Font.Navi</font>
+										<zorder>100</zorder>
+									</attr>		
+									<eventlist>
+										<event name="OnMouseEnter" file="NaviBar.xml.lua" func="OnMouseEnter" />
+										<event name="OnMouseLeave" file="NaviBar.xml.lua" func="OnMouseLeave" />
+										<event name="OnLButtonDown" file="NaviBar.xml.lua" func="OnMouseClick" />
+									</eventlist>
+								</obj>
+								<obj id="ControlCenter" class="TextObject">
+									<attr>
+										<left>278</left>
+										<top>0</top>
+										<width>80</width>
+										<height>25</height>
+										<text>控制中心</text>
+										<textcolor>Color.Gray</textcolor>
+										<font>Font.Navi</font>
+										<zorder>100</zorder>
+									</attr>		
+
+									<eventlist>
+										<event name="OnMouseEnter" file="NaviBar.xml.lua" func="OnMouseEnter" />
+										<event name="OnMouseLeave" file="NaviBar.xml.lua" func="OnMouseLeave" />
+										<event name="OnLButtonDown" file="NaviBar.xml.lua" func="OnMouseClick" />
+									</eventlist>
+								</obj>
+							</children>
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="NaviBar.xml.lua" func="OnInitControl" />
+			</eventlist>
+		</objtemplate>	
+	</control>
+
+</xlue>

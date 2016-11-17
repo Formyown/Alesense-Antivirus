@@ -1,0 +1,165 @@
+<xlue>
+	<objtreetemplate id="As.Popwin.Tree" class="ObjectTreeTemplate">
+		<attr>
+			<left>-300</left>
+			<top>-300</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>		
+		<obj id="BackGroundImg" class="ImageObject">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>460</width>
+				<height>260</height>
+				<image>Res.PopWin.Bkg.Warning</image>
+			</attr>
+			<children>
+				<!-- 标题栏 -->
+				<obj id="CaptionBar" class="CaptionObject">
+					<attr>
+						<left>10</left>
+						<top>10</top>
+						<height>father.height - 20</height>
+						<width>father.width - 20</width>
+					</attr>
+				</obj>		
+
+				<obj id="TextObj1" class="TextObject">
+					<attr>
+						<left>40</left>
+						<top>75</top>
+						<width>380</width>
+						<height>25</height>
+						<text></text>
+						<textcolor>Color.White</textcolor>
+						<font>Font.Nor15</font>
+					</attr>		
+				</obj>
+				<obj id="TextObj2" class="TextObject">
+					<attr>
+						<left>40</left>
+						<top>95</top>
+						<width>380</width>
+						<height>25</height>
+						<text></text>
+						<textcolor>Color.White</textcolor>
+						<font>Font.Nor15</font>
+					</attr>		
+				</obj>
+				<obj id="TextObj3" class="TextObject">
+					<attr>
+						<left>40</left>
+						<top>115</top>
+						<width>380</width>
+						<height>25</height>
+						<text></text>
+						<textcolor>Color.White</textcolor>
+						<font>Font.Nor15</font>
+					</attr>		
+				</obj>
+				<obj id="TextObj4" class="TextObject">
+					<attr>
+						<left>40</left>
+						<top>135</top>
+						<width>380</width>
+						<height>50</height>
+						<multiline>1</multiline>
+						<text></text>
+						<textcolor>Color.White</textcolor>
+						<font>Font.Nor15</font>
+					</attr>		
+				</obj>
+				<obj id="CalcTextObj" class ="TextObject">	
+							<attr>	
+								<text></text>
+								<left>-1000</left>
+								<top>-1000</top>
+								<width>380</width>
+								<height>50</height>
+								<font>Font.Nor15</font>
+								<textcolor>Color.White</textcolor>
+							</attr>
+				</obj>
+				<obj id = "LeftBtn" class = "UI.Button">
+					<attr>
+						<left>30</left>
+						<top>217</top>
+						<width>90</width>
+						<height>24</height>
+						<TextHAlign>center</TextHAlign>
+						<TextVAlign>center</TextVAlign>
+						<BkgNormalTextureID>Res.MsgButton.Nor</BkgNormalTextureID>
+						<BkgHoverTextureID>Res.MsgButton.Hover</BkgHoverTextureID>
+						<BkgDownTextureID>Res.MsgButton.Hover</BkgDownTextureID>
+						<BkgDisableTextureID>Res.MsgButton.Nor</BkgDisableTextureID>
+						<TextNormalColorID>Color.White</TextNormalColorID>
+						<TextHoverColorID>Color.White</TextHoverColorID>
+						<TextDownColorID>Color.Gray</TextDownColorID>
+						<TextDisableColorID>Color.Gray</TextDisableColorID>
+						<BFocusShowDown>1</BFocusShowDown>
+					</attr>
+					<eventlist>
+						<event name = "OnClick" file = "PopWindow.xml.lua" func = "OnLeftButtonClick" />
+					</eventlist>
+				</obj>
+				<obj id = "RightBtn" class = "UI.Button">
+					<attr>
+						<left>342</left>
+						<top>217</top>
+						<width>90</width>
+						<height>24</height>
+						<TextHAlign>center</TextHAlign>
+						<TextVAlign>center</TextVAlign>
+						<BkgNormalTextureID>Res.MsgButton.Nor</BkgNormalTextureID>
+						<BkgHoverTextureID>Res.MsgButton.Hover</BkgHoverTextureID>
+						<BkgDownTextureID>Res.MsgButton.Hover</BkgDownTextureID>
+						<BkgDisableTextureID>Res.MsgButton.Nor</BkgDisableTextureID>
+						<TextNormalColorID>Color.White</TextNormalColorID>
+						<TextHoverColorID>Color.White</TextHoverColorID>
+						<TextDownColorID>Color.Gray</TextDownColorID>
+						<TextDisableColorID>Color.Gray</TextDisableColorID>
+						<BFocusShowDown>1</BFocusShowDown>
+					</attr>
+					<eventlist>
+						<event name = "OnClick" file = "PopWindow.xml.lua" func = "OnRightButtonClick" />
+					</eventlist>
+				</obj>
+			</children>	
+		</obj>
+	</objtreetemplate>
+
+	<hostwndtemplate id="As.PopWin" class="FrameHostWnd">
+		<attr> 
+			<mainwnd>1</mainwnd>
+			<title>侦锐反病毒</title>
+			<layered>1</layered>
+			<left>200</left> 
+			<top>100</top>
+			<width>460</width>
+			<height>260</height>
+			<cacheleft>0</cacheleft> 
+			<cachetop>0</cachetop>
+
+			<cachewidth>1000</cachewidth>
+			<cacheheight>720</cacheheight>
+			<center>1</center>
+			<topmost>0</topmost>
+			<visible>1</visible>
+			<enable>1</enable>
+			<active>1</active>
+			<minwidth>100</minwidth>
+			<minheight>72</minheight>
+			<maxwidth>1000</maxwidth>
+			<maxheight>720</maxheight>
+			<appwindow>1</appwindow>
+			<fps>15</fps>
+		</attr>
+		<eventlist>
+			<event name="OnCreate" file="PopWindow.xml.lua" func="OnInitControl" />
+			<event name="OnCreate" file="PopWindow.xml.lua" func= "OnCreate" />
+			<event name= "OnDestroy" file= "PopWindow.xml.lua" func= "OnDestroy"/>
+			<event name= "OnShowWindow" file= "PopWindow.xml.lua" func= "OnShowWindow"/>
+		</eventlist>
+	</hostwndtemplate>
+</xlue>

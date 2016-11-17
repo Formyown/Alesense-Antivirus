@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Driver Files">
+      <UniqueIdentifier>{8E41214B-6785-4CFE-B992-037D68949A14}</UniqueIdentifier>
+      <Extensions>inf;inv;inx;mof;mc;</Extensions>
+    </Filter>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <Inf Include="AsFilter.inf">
+      <Filter>Driver Files</Filter>
+    </Inf>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="FilterEntry.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FilterCommunication.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FilterRoutine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FilterFrame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FilterInlineHook.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="FilterCommunication.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterEntry.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterFrame.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterRoutine_SelfProtection.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterRoutine_ProcessProtection.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterRoutine_DriverProtection.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterRoutine_RegistryProtection.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterInlineHook.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FilterDasm.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,47 @@
+<xlue>
+	<control class="ProgressBar">
+		<attr_def>
+			<attr name="maxvalue" type="int" >
+				<default>100</default>
+			</attr>
+			<attr name="value" type="int" >
+				<default>0</default>
+			</attr>
+		</attr_def>
+		<method_def>
+			<SetMaxValue file="ProgressBar.xml.lua" func="SetMaxValue"/>
+			<SetValue file="ProgressBar.xml.lua" func="SetValue" />
+		</method_def>
+		<event_def>
+		</event_def>
+		<objtemplate>
+			<children>
+				<obj id="Bkg" class="TextureObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<texture>Res.Progress.Bkg</texture>
+					</attr>
+					<children>
+						<obj id="Fore" class="TextureObject">
+							<attr>
+								<left>2</left>
+								<top>2</top>
+								<width>father.width - 4</width>
+								<height>father.height - 4</height>
+								<texture>Res.Progress.Fore</texture>
+							</attr>
+						</obj>
+					</children>
+				</obj>
+				
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="ProgressBar.xml.lua" func="OnInitControl" />
+			</eventlist>
+		</objtemplate>	
+	</control>
+
+</xlue>

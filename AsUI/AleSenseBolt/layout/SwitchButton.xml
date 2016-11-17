@@ -1,0 +1,93 @@
+<xlue>
+	<control class="SwitchButton">
+		<attr_def>
+			<attr name="switch" type="bool" >
+				<default>false</default>
+			</attr>
+			<attr name="forecolorid" type="string" >
+				<default>false</default>
+			</attr>
+		</attr_def>
+		<method_def>
+			<SetSwitch file="SwitchButton.xml.lua" func="SetSwitch"/>
+			<GetSwitch file="SwitchButton.xml.lua" func="GetSwitch"/>
+		</method_def>
+		<event_def>
+			<OnSwitch />
+		</event_def>
+		<objtemplate>
+			<children>
+				<obj id="Background" class="FillObject">
+					<attr>
+						<width>40</width>
+						<height>20</height>
+						<top>2</top>
+						<width>father.width</width>
+						<height>father.height - 4</height>
+						<filltype>Monochrome</filltype>
+						<srccolor>Color.Gray</srccolor>
+						<zorder>0</zorder>
+					</attr>
+
+					<children>
+						<obj id="Background2" class="FillObject">
+							<attr>
+								<left>2</left>
+								<top>2</top>
+								<width>father.width - 4</width>
+								<height>father.height - 4</height>
+								<filltype>Monochrome</filltype>
+								<srccolor>Color.Black</srccolor>
+								<zorder>1</zorder>
+							</attr>
+							<children>
+								<obj id="Background3" class="FillObject">
+									<attr>
+										<left>1</left>
+										<top>1</top>
+										<width>father.width - 2</width>
+										<height>father.height - 2</height>
+										<filltype>Monochrome</filltype>
+										<srccolor>Color.Gray</srccolor>
+										<zorder>3</zorder>
+									</attr>
+								</obj>
+							</children>
+						</obj>
+					</children>
+				</obj>
+				<obj id="Handle" class="FillObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>15</width>
+						<height>father.height</height>
+						<filltype>Monochrome</filltype>
+						<srccolor>Color.Gray</srccolor>
+						<zorder>99</zorder>
+					</attr>
+					<children>
+						<obj id="Handle.Fore" class="FillObject">
+							<attr>
+								<left>1</left>
+								<top>1</top>
+								<width>13</width>
+								<height>father.height - 2</height>
+								<filltype>Monochrome</filltype>
+								<srccolor>Color.DarkGray</srccolor>
+								<zorder>100</zorder>
+							</attr>
+						</obj>
+					</children>
+				</obj>
+			</children>
+
+			<eventlist>
+				<event name="OnLButtonDown" file="SwitchButton.xml.lua" func="OnLButtonDown" />
+				<event name="OnLButtonUp" file="SwitchButton.xml.lua" func="OnLButtonUp" />
+				<event name="OnInitControl" file="SwitchButton.xml.lua" func="OnInitControl" />
+			</eventlist>
+		</objtemplate>	
+	</control>
+
+</xlue>

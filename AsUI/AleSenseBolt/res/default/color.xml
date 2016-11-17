@@ -1,0 +1,26 @@
+<XLUE>
+	<resource>
+		<brush id="Brush" brushstyle="null" />
+		<pen id="Pen.1px" width="1" penstyle="solid" />
+		<pen id="Pen.2px" width="1" penstyle="solid" />
+
+		<color id="Color.White" red="255" green="255" blue="255" alpha="255" />
+		<color id="Color.Navi.Selected" red="255" green="255" blue="255" alpha="255" />
+		
+		<color id="Color.MetroText" red="170" green="170" blue="170" alpha="255" />
+		<color id="Color.MetroGray" red="29" green="29" blue="29" alpha="255" />
+		<color id="Color.MetroBlack" red="21" green="21" blue="21" alpha="255" />
+		<color id="Color.MetroBorder" red="75" green="75" blue="75" alpha="255" />
+		<color id="Color.Black" red="0" green="0" blue="0" alpha="255" />
+		<color id="system.orange" red="44" green="151" blue="241" alpha="255" />
+		<color id="Color.Gray" red="100" green="100" blue="100" alpha="255" />
+		<color id="Color.DarkGray" red="33" green="33" blue="33" alpha="255" />
+		<color id="Color.Blue" red="0" green="73" blue="128" alpha="255" />
+		<color id="Color.BlueLine" red="30" green="91" blue="176" alpha="255" />
+		<color id="Color.LightBlue" red="63" green="151" blue="217" alpha="255" />
+		<color id="Color.Border" red="100" green="100" blue="100" alpha="255" />
+		<color id="Color.MetroGreen" red="18" green="125" blue="58" alpha="255" />
+		<color id="Color.Red" red="184" green="40" blue="40" alpha="255" />
+		<color id="Color.Yellow" red="225" green="129" blue="45" alpha="255" />
+	</resource>
+</XLUE>

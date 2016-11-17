@@ -1,0 +1,473 @@
+<xlue>
+	<control class="As.Metro.Scanning">
+		<attr_def></attr_def>
+		<method_def>
+			<HandleMsg file="MetroScanning.xml.lua" func="HandleMsg"/>
+		</method_def>
+		<event_def>
+			<OnPaus/>
+			<OnStop/>
+			<OnContinue/>
+		</event_def>
+		<objtemplate>
+			<children>
+				<obj id="DefaultLayout" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+					<eventlist>
+						
+
+					</eventlist>
+					<children>
+						<obj id="ChoiceBkg" class="TextureObject">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>190</width>
+								<height>330</height>
+								<texture>Res.RectBkg</texture>
+							</attr>
+							<children>
+								<obj id="ItemBkg" class="TextureObject">
+									<attr>
+										<left>3</left>
+										<top>3</top>
+										<width>184</width>
+										<height>76</height>
+										<texture>Res.ScanSelect</texture>
+									</attr>
+								</obj>
+								<obj id="QuickScanTitle" class="TextObject">
+									<attr>
+										<left>3</left>
+										<top>20</top>
+										<width>184</width>
+										<height>25</height>
+										<text>快速扫描</text>
+										<halign>center</halign>
+										<textcolor>Color.White</textcolor>
+										<zorder>99</zorder>
+										<font>Font.Nor</font>
+									</attr>		
+								</obj>
+								<obj id="QuickScanText" class="TextObject">
+									<attr>
+										<left>3</left>
+										<top>43</top>
+										<width>184</width>
+										<height>25</height>
+										<text>扫描关键位置和常规位置</text>
+										<halign>center</halign>
+										<zorder>99</zorder>
+										<textcolor>Color.White</textcolor>
+										<font>Font.Nor14</font>
+									</attr>		
+								</obj>
+								<obj id="QuickScanBackground" class="LayoutObject">
+									<attr>
+										<left>3</left>
+										<top>3</top>
+										<width>184</width>
+										<height>76</height>
+									</attr>		
+									<eventlist>
+										<event name="OnLButtonDown" file="MetroScanning.xml.lua" func="OnMouseDown" />
+										<event name="OnLButtonUp" file="MetroScanning.xml.lua" func="OnMouseUp" />
+									</eventlist>
+								</obj>
+
+								<!--==================================-->
+								<obj id="TotalScanTitle" class="TextObject">
+									<attr>
+										<left>3</left>
+										<top>90</top>
+										<width>184</width>
+										<height>25</height>
+										<text>全盘扫描</text>
+										<halign>center</halign>
+										<zorder>99</zorder>
+										<textcolor>Color.White</textcolor>
+										<font>Font.Nor</font>
+									</attr>		
+								</obj>
+								<obj id="TotalScanText" class="TextObject">
+									<attr>
+										<left>15</left>
+										<top>113</top>
+										<width>180</width>
+										<height>50</height>
+										<multiline>1</multiline>
+										<text>扫描计算机上所有文件和文件夹</text>
+										<zorder>99</zorder>
+										<textcolor>Color.White</textcolor>
+										<font>Font.Nor14</font>
+									</attr>		
+								</obj>
+								<obj id="TotalScanBackground" class="LayoutObject">
+									<attr>
+										<left>3</left>
+										<top>79</top>
+										<width>184</width>
+										<height>76</height>
+									</attr>		
+									<eventlist>
+										<event name="OnLButtonDown" file="MetroScanning.xml.lua" func="OnMouseDown" />
+										<event name="OnLButtonUp" file="MetroScanning.xml.lua" func="OnMouseUp" />
+
+									</eventlist>
+								</obj>
+								<!--==================================-->
+
+								<obj id="CustomScanTitle" class="TextObject">
+									<attr>
+										<left>3</left>
+										<top>168</top>
+										<width>184</width>
+										<height>25</height>
+										<text>自定义扫描</text>
+										<halign>center</halign>
+										<zorder>99</zorder>
+										<textcolor>Color.White</textcolor>
+										<font>Font.Nor</font>
+									</attr>		
+								</obj>
+								<obj id="CustomScanText" class="TextObject">
+									<attr>
+										<left>3</left>
+										<top>191</top>
+										<width>184</width>
+										<height>25</height>
+										<text>扫描选定的文件或文件夹</text>
+										<halign>center</halign>
+										<zorder>99</zorder>
+										<textcolor>Color.White</textcolor>
+										<font>Font.Nor14</font>
+									</attr>		
+								</obj>
+								<obj id="CustomScanBackground" class="LayoutObject">
+									<attr>
+										<left>3</left>
+										<top>155</top>
+										<width>184</width>
+										<height>76</height>
+									</attr>		
+									<eventlist>
+										<event name="OnLButtonDown" file="MetroScanning.xml.lua" func="OnMouseDown" />
+										<event name="OnLButtonUp" file="MetroScanning.xml.lua" func="OnMouseUp" />
+
+									</eventlist>
+								</obj>
+
+
+
+								<obj id="DisplayInfoBackground" class="FillObject">
+									<attr>
+										<left>2</left>
+										<top>240</top>
+										<width>186</width>
+										<height>88</height>
+										<filltype>Monochrome</filltype>
+										<srccolor>Color.Blue</srccolor>
+									</attr>
+									<children>
+										<obj id="DisplayInfo" class="TextObject">
+											<attr>
+												<left>3</left>
+												<top>10</top>
+												<width>184</width>
+												<height>100</height>
+												<text>上次扫描:      &#x0A;扫描文件:    &#x0A;检出:   隔离: </text>
+												<multiline>1</multiline>
+												<halign>center</halign>
+												<textcolor>Color.White</textcolor>
+												<font>Font.Nor14</font>
+											</attr>		
+										</obj>
+
+									</children>
+								</obj>
+							</children>
+						</obj>
+						<obj id="ScanTypeTitle" class="TextObject">
+							<attr>
+								<left>240</left>
+								<top>0</top>
+								<width>184</width>
+								<height>30</height>
+								<text>快速扫描</text>
+								<multiline>1</multiline>
+								<textcolor>Color.White</textcolor>
+								<font>Font.Nor</font>
+							</attr>		
+						</obj>
+						<obj id="ScanTypeText" class="TextObject">
+							<attr>
+								<left>240</left>
+								<top>25</top>
+								<width>400</width>
+								<height>30</height>
+								<text>扫描系统关键位置、敏感位置，不会耗费太多时间</text>
+								<textcolor>Color.White</textcolor>
+								<font>Font.Nor14</font>
+							</attr>		
+						</obj>
+						<obj id="ScanButton" class="As.button">
+							<attr>
+								<left>365</left>
+								<top>155</top>
+								<width>135</width>
+								<height>45</height>
+								<Text>扫描</Text>
+
+							</attr>
+							<eventlist>
+								<event name="OnClick" file="MetroScanning.xml.lua" func="OnClickScanning" />
+
+							</eventlist>
+						</obj>
+						<obj id="StatusBkg" class="TextureObject">
+							<attr>
+								<left>240</left>
+								<top>303</top>
+								<width>420</width>
+								<height>32</height>
+								<texture>Res.RectBkg</texture>
+							</attr>
+							<children>
+								<obj id="Info" class="TextObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width</width>
+										<height>father.height</height>
+										<text>SharpArrow启发等级:高     反病毒社区:不支持     扫描器:最新</text>
+										<halign>center</halign>
+										<valign>center</valign>
+										<multiline>1</multiline>
+										<textcolor>Color.White</textcolor>
+										<font>Font.Nor14</font>
+									</attr>		
+								</obj>
+							</children>
+						</obj>
+					</children>
+				</obj>
+
+
+				<obj id="ScanningLayout" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<visable>0</visable>
+					</attr>
+					<children>
+						<obj id="ScanningType" class ="TextObject">	
+							<attr>	
+								<text>快速扫描</text>
+								<left>0</left>
+								<top>-10</top>
+								<width>150</width>
+								<height>40</height>
+								<font>Font.Nor25</font>
+								<textcolor>Color.White</textcolor>
+							</attr>
+						</obj>
+						<obj id="ScanningPath" class ="TextObject">	
+							<attr>	
+								<text></text>
+								<left>130</left>
+								<top>0</top>
+								<width>330</width>
+								<height>40</height>
+								<font>Font.Nor15</font>
+								<wordellipsis>1</wordellipsis>
+								<textcolor>Color.White</textcolor>
+							</attr>
+						</obj>
+						<obj id="CalcTextObj" class ="TextObject">	
+							<attr>	
+								<text></text>
+								<left>-1000</left>
+								<top>-1000</top>
+								<width>330</width>
+								<height>40</height>
+								<font>Font.Nor15</font>
+								<wordellipsis>1</wordellipsis>
+								<textcolor>Color.White</textcolor>
+							</attr>
+						</obj>
+						
+						<obj id="ProgressBar" class="ProgressBar">
+							<attr>	
+								<left>0</left>
+								<top>35</top>
+								<width>father.width</width>
+								<height>26</height>
+								<value>0</value>
+								<maxvalue>100</maxvalue>
+							</attr>
+						</obj>
+						<obj id="PauseButton" class="As.button">
+							<attr>
+								<left>470</left>
+								<top>-10</top>
+								<width>100</width>
+								<height>40</height>
+								<Text>暂停</Text>
+
+							</attr>
+							<eventlist>
+								<event name="OnClick" file="MetroScanning.xml.lua" func="OnClickPause" />
+
+							</eventlist>
+						</obj>
+						<obj id="StopButton" class="As.button">
+							<attr>
+								<left>583</left>
+								<top>-10</top>
+								<width>100</width>
+								<height>40</height>
+								<Text>终止</Text>
+
+							</attr>
+							<eventlist>
+								<event name="OnClick" file="MetroScanning.xml.lua" func="OnClickStop" />
+
+							</eventlist>
+						</obj>
+
+
+						<obj id="FoundNumber" class ="TextObject">	
+							<attr>	
+								<text>发现:0 个</text>
+								<left>0</left>
+								<top>70</top>
+								<width>150</width>
+								<height>20</height>
+								<font>Font.Nor15</font>
+								<textcolor>Color.White</textcolor>
+							</attr>
+						</obj>
+						<obj id="ScanedNumber" class ="TextObject">	
+							<attr>	
+								<text>已扫描:863 个</text>
+								<left>160</left>
+								<top>70</top>
+								<width>150</width>
+								<height>20</height>
+								<font>Font.Nor15</font>
+								<textcolor>Color.Gray</textcolor>
+							</attr>
+						</obj>
+						<obj id="ScanningVelocity" class ="TextObject">	
+							<attr>	
+								<text>速度:0 个每秒</text>
+								<left>350</left>
+								<top>70</top>
+								<width>150</width>
+								<height>20</height>
+								<font>Font.Nor15</font>
+								<textcolor>Color.Gray</textcolor>
+							</attr>
+						</obj>
+						<obj id="ScanningTime" class ="TextObject">	
+							<attr>	
+								<text>用时:秒</text>
+								<left>father.width - 150</left>
+								<top>70</top>
+								<width>150</width>
+								<height>20</height>
+								<font>Font.Nor15</font>
+								<halign>right</halign>
+								<textcolor>Color.Gray</textcolor>
+							</attr>
+						</obj>
+
+
+						<obj id="ResultList" class="TextureObject">
+							<attr>
+								<left>0</left>
+								<top>110</top>
+								<width>father.width</width>
+								<height>225</height>
+								<texture>Res.RectBkg</texture>
+							</attr>
+
+							<children>
+								<obj id="List" class="ListCtrl">
+									<attr>
+										<width>father.width</width>
+										<height>father.height</height>
+									</attr>
+									<eventlist>
+										<!--<event name="OnSelectChanged" file="MainWnd.xml.lua" func="List_OnSelectChanged" />-->
+										<event name="OnGetNextItem" file="MetroScanning.xml.lua" func="OnListGetNext" />
+										<event name="OnGetPrevItem" file="MetroScanning.xml.lua" func="OnListGetPrev" />
+									</eventlist>
+								</obj>
+							</children>
+						</obj>
+					</children>
+				</obj>
+				<obj id="ResultLayout" class="LayoutObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<visable>0</visable>
+
+					</attr>
+					<children>
+						<obj id="ResultTitle" class ="TextObject">	
+							<attr>	
+								<text>处理完成</text>
+								<left>0</left>
+								<top>-10</top>
+								<width>200</width>
+								<height>30</height>
+								<font>Font.Nor25</font>
+								<textcolor>Color.White</textcolor>
+							</attr>
+						</obj>
+						<obj id="ResultText" class ="TextObject">	
+							<attr>	
+								<text>现在您的计算机安全了。</text>
+								<left>0</left>
+								<top>20</top>
+								<width>300</width>
+								<height>20</height>
+								<font>Font.Nor15</font>
+								<textcolor>Color.White</textcolor>
+							</attr>
+						</obj>
+						<obj id="KnowButton" class="As.button">
+							<attr>
+								<left>570</left>
+								<top>-10</top>
+								<width>113</width>
+								<height>40</height>
+								<Text>知道了</Text>
+
+							</attr>
+							<eventlist>
+								<event name="OnClick" file="MetroScanning.xml.lua" func="OnClickReturnDeafult" />
+
+							</eventlist>
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="MetroScanning.xml.lua" func="OnInitControl" />
+			</eventlist>
+		</objtemplate>
+	</control>
+
+</xlue>

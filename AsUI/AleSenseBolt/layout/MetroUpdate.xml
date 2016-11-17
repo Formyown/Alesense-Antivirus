@@ -1,0 +1,71 @@
+<xlue>
+	<control class="As.Metro.Update">
+		<attr_def></attr_def>
+		<method_def>
+		</method_def>
+		<event_def>
+			<!--定义按下按钮事件-->
+			<OnClickFunctionButton>
+				<param>
+					<int/>
+				</param>
+			</OnClickFunctionButton>
+		</event_def>
+		<objtemplate>
+			<children>	
+				<obj id="CloudIco" class="ImageObject">
+					<attr>
+						<left>284</left>
+						<top>50</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<image>Res.Cloud</image>
+					</attr>
+				</obj>
+				<obj id="StatusBkg" class="TextureObject">
+					<attr>
+						<left>170</left>
+						<top>170</top>
+						<width>335</width>
+						<height>80</height>
+						<texture>Res.RectBkg</texture>
+					</attr>
+					<children>
+						<obj id="Info" class="TextObject">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>father.height / 2</height>
+								<text>反病毒数据库当前版本 14.0.0.001</text>
+								<halign>center</halign>
+								<valign>center</valign>
+								<multiline>1</multiline>
+								<textcolor>Color.Gray</textcolor>
+								<font>Font.Nor16</font>
+							</attr>		
+						</obj>
+						<obj id="Info" class="TextObject">
+							<attr>
+								<left>0</left>
+								<top>father.height / 2</top>
+								<width>father.width</width>
+								<height>father.height / 2</height>
+								<text>反病毒中心                                正常</text>
+								<halign>center</halign>
+								<valign>center</valign>
+								<multiline>1</multiline>
+								<textcolor>Color.White</textcolor>
+								<font>Font.Nor16</font>
+							</attr>		
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="MetroUpdate.xml.lua" func="OnInitControl" />
+			</eventlist>
+		</objtemplate>
+	</control>
+
+</xlue>

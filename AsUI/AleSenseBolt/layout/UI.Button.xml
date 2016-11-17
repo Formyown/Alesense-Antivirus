@@ -1,0 +1,285 @@
+<xlue>
+	<control class = "UI.Button">
+		<attr_def>
+			<!-- 四态背景 -->
+			<attr name = "BkgNormalTextureID" 	type = "string"/>
+			<attr name = "BkgHoverTextureID" 	type = "string"/>
+			<attr name = "BkgDownTextureID" 	type = "string"/>
+			<attr name = "BkgDisableTextureID" 	type = "string"/>
+			<!-- 四态文本字体 -->
+			<attr name = "TextNormalFontID" 	type = "string"/>
+			<attr name = "TextHoverFontID" 		type = "string"/>
+			<attr name = "TextDownFontID" 		type = "string"/>
+			<attr name = "TextDisableFontID" 	type = "string"/>
+			<!-- 四态文本颜色 -->
+			<attr name = "TextNormalColorID" 	type = "string"/>
+			<attr name = "TextHoverColorID" 	type = "string"/>
+			<attr name = "TextDownColorID" 		type = "string"/>
+			<attr name = "TextDisableColorID" 	type = "string"/>
+			<!-- 文本左上角位置和宽高 -->
+			<attr name = "TextLeftPos"			type = "int" >
+				<default>0</default>
+			</attr>
+			<attr name = "TextTopPos"			type = "int" >
+				<default>0</default>
+			</attr>
+			<!-- 如果宽高为nil，则width = "father.width - TextLeftPos", height = "father.height - TextTopPos" -->
+			<attr name = "TextWidth"			type = "int" />
+			<attr name = "TextHeight"			type = "int" />
+			<!-- 文本横纵对齐 -->
+			<attr name = "TextVAlign"			type = "string" >
+				<default>top</default>
+			</attr>
+			<attr name = "TextHAlign"			type = "string" >
+				<default>left</default>
+			</attr>
+			<!-- 文本 -->
+			<attr name = "Text"					type = "string" />
+			
+			<!-- icon res -->
+			<!-- 如果有icon的话，IconNormalImageID是必要的，lua中是根据这个属性来动态创建控件的-->
+			<attr name = "IconNormalImageID"	type = "string" />
+			<attr name = "IconHoverImageID"		type = "string" />
+			<attr name = "IconDownImageID"		type = "string" />
+			<attr name = "IconDisalbeImageID"	type = "string" />
+			
+			<attr name = "IconLeftPos"			type = "int" >
+				<default>0</default>
+			</attr>
+			<attr name = "IconTopPos"			type = "int" >
+				<default>0</default>
+			</attr>
+			<!-- 相应的宽高属性为空的话，就取控件的宽高-->
+			<attr name = "IconWidth"			type = "int" />
+			<attr name = "IconHeight"			type = "int" />
+			<attr name = "IconVAlign"			type = "string" >
+				<default>top</default>
+			</attr>
+			<attr name = "IconHAlign"			type = "string" >
+				<default>left</default>
+			</attr>
+			
+			<!-- Tip 文本和模板 -->
+			<attr name = "TipText"				type = "string" />
+			<attr name = "TipTemplate"			type = "string" />
+			
+			<!-- 焦点框 -->
+				<!-- 有焦点时是否显示为down的背景-->
+			<attr name = "BFocusShowDown"		type = "bool" >
+				<default>false</default>
+			</attr>
+				<!-- 是否显示 -->
+			<attr name = "BShowFocusRect"		type = "bool" >
+				<default>false</default>
+			</attr>
+				<!-- 焦点框左上角坐标和宽高 -->
+			<attr name = "FocusRectLeftPos"		type = "int" >
+				<default>0</default>
+			</attr>
+			<attr name = "FocusRectTopPos"		type = "int" >
+				<default>0</default>
+			</attr>
+			<!-- 如果宽高为nil，则width = "father.width - FocusRectLeftPos", height = "father.height - FocusRectTopPos" -->
+			<attr name = "FocusRectWidth"		type = "int" />
+			<attr name = "FocusRectHeight"		type = "int" />
+			
+			<!-- 是不是默认按钮(默认按钮带动画) -->
+			<attr name = "IsDefaultBtn" 		type = "bool" >
+				<default>false</default>
+			</attr>
+				<!-- 当按钮是默认按钮的背景纹理(有时默认按钮是的纹理用的不是四态纹理) -->
+			<attr name = "DefaultBkgNormal" type = "string" />
+				<!--default>texture.btn.default.normal</default-->
+			
+			<!-- 按下时是否有文本偏移 -->
+			<attr name = "IsDownModifyPos" 		type = "bool" >
+				<default>false</default>
+			</attr>
+			
+			<!-- 鼠标在btn上是不是改成手型-->
+			<attr name = "BHoverHand"			type = "bool" >
+				<default>true</default>
+			</attr>
+			
+			<!-- 发出onClick事件是不是在鼠标按下的时候，否则就在鼠标up的时候 -->
+			<attr name = "FireClickOnDown" 		type = "bool">
+				<default>false</default>
+			</attr>
+			<!-- 双击事件是不是和单击事件一样处理 -->
+			<attr name = "ProcDbClickEqSClick" 	type = "bool">
+				<default>true</default>
+			</attr>
+			
+			<!-- 按钮四态的当前状态 (normal, hover, down, disable) -->
+			<attr name = "NowState"				type = "string" >
+				<default>normal</default>
+			</attr>
+		</attr_def>
+		
+		<method_def>
+			<SetState 			file = "UI.Button.xml.lua" func = "UIButton_SetState" />
+			<GetState 			file = "UI.Button.xml.lua" func = "UIButton_GetState" />
+			<Reset 				file = "UI.Button.xml.lua" func = "UIButton_Reset" />
+			<SetDefaultButton 	file = "UI.Button.xml.lua" func = "UIButton_SetDefaultButton" />
+			
+			<SetText			file = "UI.Button.xml.lua" func = "UIButton_SetText" />
+			<GetText			file = "UI.Button.xml.lua" func = "UIButton_GetText" />
+			<SetBkgResID 		file = "UI.Button.xml.lua" func = "UIButton_SetBkgResID" />
+			<GetBkgResID 		file = "UI.Button.xml.lua" func = "UIButton_GetBkgResID" />
+			<SetTextFont 		file = "UI.Button.xml.lua" func = "UIButton_SetTextFont" />
+			<GetTextFont 		file = "UI.Button.xml.lua" func = "UIButton_GetTextFont" />
+			<SetTextColor 		file = "UI.Button.xml.lua" func = "UIButton_SetTextColor" />
+			<GetTextColor 		file = "UI.Button.xml.lua" func = "UIButton_GetTextColor" />
+			<GetTextExtent 		file = "UI.Button.xml.lua" func = "UIButton_GetTextExtent" />
+			
+			<SetTextPos 		file = "UI.Button.xml.lua" func = "UIButton_SetTextPos" />
+		
+			<SetTipText 		file = "UI.Button.xml.lua" func = "UIButton_SetTipText" />
+			<GetTipText 		file = "UI.Button.xml.lua" func = "UIButton_GetTipText" />
+			<SetTipTemplate		file = "UI.Button.xml.lua" func = "UIButton_SetTipTemplate" />
+			<GetTipTemplate 	file = "UI.Button.xml.lua" func = "UIButton_GetTipTemplate" />
+		</method_def>
+		
+		<event_def>
+			<!-- 按钮按下时的发出的事件 -->
+			<OnClick />
+			<!-- 还是让父主动来控制default吧，不然会产生事件循环 -->
+			<!--OnBeDefaultBtn /-->
+		</event_def>
+		
+		<objtemplate>
+			<children>
+				<obj id = "bkg" class = "TextureObject" >
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+						<limitchild>1</limitchild>
+					</attr>
+					<children>
+						<obj id = "oldbkg" class = "TextureObject" >
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>father.height</height>
+								<!--默认父子zorder跨度是100, 这里用-10是为了让oldbkg在bkg之上(本来就会在，因为是子在父前)-->
+								<!-- 但在其他控件之下。oldkbg的zorder只要小于0就OK-->
+								<zorder>-10</zorder>
+							</attr>
+						</obj>
+						<!-- 感觉到不让oldbkg成为text的父的逻辑更合适,所以...(是父的话效果也不会有问题)-->
+						<!-- 下面都采用动态创建(因为都不是必需，节省内存) -->
+						<!--obj id = "text" class = "TextObject" >
+							<left>0</left>
+							<top>0</top>
+							<width>father.width</width>
+							<height>father.height</height>
+						</obj>
+						<obj id = "focusrectangle" class = "RectangleObject">
+							<attr>
+								<left>2</left>
+								<top>2</top>
+								<width>father.width - 6</width>
+								<height>father.height - 6</height>
+								<srcpt>0, 0</srcpt>
+								<destpt>width, height</destpt>
+								<pen>pen.dot</pen>
+								<pencolor>system.black</pencolor>
+								<brush>brush.null</brush>
+								<visible>false</visible>
+							</attr>
+						</obj-->
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name = "OnBind" 				file = "UI.Button.xml.lua" func = "UIButton_OnBind" />
+				<event name = "OnInitControl" 		file = "UI.Button.xml.lua" func = "UIButton_OnInitControl" />
+				<event name = "OnVisibleChange" 	file = "UI.Button.xml.lua" func = "UIButton_OnVisibleChange" />
+				<event name = "OnEnableChange" 		file = "UI.Button.xml.lua" func = "UIButton_OnEnableChange" />
+				<event name = "OnFocusChange" 		file = "UI.Button.xml.lua" func = "UIButton_OnFocusChange" />
+				
+				<event name = "OnPosChange" 		file = "UI.Button.xml.lua" func = "UIButton_OnPosChange" />
+				
+				<event name = "OnLButtonDown" 		file = "UI.Button.xml.lua" func = "UIButton_OnLButtonDown" />
+				<event name = "OnLButtonUp" 		file = "UI.Button.xml.lua" func = "UIButton_OnLButtonUp" />
+				<event name = "OnLButtonDbClick" 	file = "UI.Button.xml.lua" func = "UIButton_OnLButtonDbClick" />
+				<event name = "OnMouseEnter" 		file = "UI.Button.xml.lua" func = "UIButton_OnMouseEnter" />
+				<event name = "OnMouseMove" 		file = "UI.Button.xml.lua" func = "UIButton_OnMouseMove" />
+				<event name = "OnMouseLeave" 		file = "UI.Button.xml.lua" func = "UIButton_OnMouseLeave" />
+				<event name = "OnMouseWheel" 		file = "UI.Button.xml.lua" func = "UIButton_OnMouseWheel" />
+				<event name = "OnKeyDown" 			file = "UI.Button.xml.lua" func = "UIButton_OnKeyDown" />
+				<event name = "OnKeyUp" 			file = "UI.Button.xml.lua" func = "UIButton_OnKeyUp" />				
+				<!-- 本来想在onDestory销毁动画,但测试了下发现不销毁好像也什么问题，汗，而且OnDestory是由子到父，也不好销毁,我猜bolt可能AttachListener动画绑定对像的onDestory事件，在这个事件做了销毁处理-->
+				<!--event name = "OnDestory" 		file = "UI.Button.xml.lua" func = "UIButton_OnDestory" /-->
+			</eventlist>
+		</objtemplate>
+	</control>
+	
+	<!-- tip button 的 tip 窗口定义 -->
+	<hostwndtemplate id = "UIBtn.TipWnd" class = "TipsHostWnd">
+		<attr>
+			<layered>1</layered>
+			<left>0</left>
+			<top>0</top>
+			<width>2000</width>
+			<height>1000</height>
+			<fps>30</fps>
+		</attr>
+		<eventlist>
+			<event name = "OnCreate" 		file = "UI.Button.xml.lua" func = "UIBtnTipWnd_OnCreate"/>
+			<event name = "OnDelayPopup" 	file = "UI.Button.xml.lua" func = "UIBtnTipWnd_OnDelayPopup"/>
+			<event name = "OnDelayCancel" 	file = "UI.Button.xml.lua" func = "UIBtnTipWnd_OnDelayCancel"/>
+		</eventlist>
+	</hostwndtemplate>
+	
+	<objtemplate id = "UIBtn.Tip" class = "LayoutObject">
+		<attr>
+		</attr>
+		<children>
+			<obj id = "bkg" class = "TextureObject">
+				<attr>
+					<texture>Res.MsgButton.Nor</texture>
+				</attr>				
+				<children>
+					<obj id = "text" class = "TextObject">
+						<attr>
+							<left>5</left>
+							<top>5</top>
+							<valign>center</valign>
+							<halign>center</halign>
+							<textcolor>Color.White</textcolor>
+							<font>Font.Nor15</font>
+							<autoresize>1</autoresize>
+						</attr>
+						<eventlist>
+							<event name = "OnPosChange" file = "UI.Button.xml.lua" func = "UIBtnTipText_OnPosChange"/>
+						</eventlist>
+					</obj>
+				</children>
+			</obj>
+		</children>
+	</objtemplate>
+	<!-- 移动到ComAni.xml -->
+	<animation_def class = "ComAni.Button.DefaultChange">
+		<attr_def>
+			<attr name = "FrameTime" type = "int" >
+				<default>3000</default>
+			</attr>
+			<attr name = "TotalTime" type = "int" >
+				<default>9999999999</default>
+			</attr>
+			<attr name = "AniTexture" type = "string" >
+				<default>texture.msgbox.btn.default.ani</default>
+			</attr>
+		</attr_def>
+		<method_def>
+			<Action 	file = "UI.Button.xml.lua" func = "DefaultButton_Action"/>
+			<BindObj 	file = "UI.Button.xml.lua" func = "DefaultButton_BindObj"/>
+			<GetBindObj file = "UI.Button.xml.lua" func = "DefaultButton_GetBindObj"/>
+			<Stop 		file = "UI.Button.xml.lua" func = "DefaultButton_Stop"/>
+		</method_def>
+	</animation_def>
+</xlue>

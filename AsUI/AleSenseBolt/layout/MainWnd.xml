@@ -1,0 +1,169 @@
+<xlue>
+	<objtreetemplate id="As.Tree" class="ObjectTreeTemplate">
+		<attr>
+			<left>-300</left>
+			<top>-300</top>
+			<width>2000</width>
+			<height>2000</height>
+		</attr>		
+		<obj id="BackGroundImg" class="ImageObject">
+			<attr>
+				<left>0</left>
+				<top>0</top>
+				<width>840</width>
+				<height>560</height>
+				<image>Res.BackgroundImg</image>
+			</attr>
+			<children>
+				<!-- 标题栏 -->
+				<obj id="CaptionBar" class="CaptionObject">
+					<attr>
+						<left>10</left>
+						<top>10</top>
+						<height>75</height>
+						<width>father.width - 20</width>
+						<zorder>99</zorder>
+					</attr>
+				</obj>		
+				<obj id="ControlBox.CloseBtn" class="As.button">
+					<attr>
+						<left>777</left>
+						<top>17</top>
+						<width>16</width>
+						<height>16</height>
+						<NormalBkgID>Res.ControlBox.CloseButton</NormalBkgID>
+						<DownBkgID>Res.ControlBox.CloseButton</DownBkgID>
+						<HoverBkgID>Res.ControlBox.CloseButton.Hover</HoverBkgID>
+						<UseBitmap>true</UseBitmap>
+					</attr>
+					<eventlist>
+						<event name="OnClick" file="MainWnd.xml.lua" func="Navi_OnCloseButtonClick" />
+					</eventlist>
+				</obj>
+				<obj id="ControlBox.ToolButton" class="As.button">
+					<attr>
+						<left>675</left>
+						<top>17</top>
+						<width>16</width>
+						<height>16</height>
+						<NormalBkgID>Res.ControlBox.ToolButton</NormalBkgID>
+						<HoverBkgID>Res.ControlBox.ToolButton.Hover</HoverBkgID>
+						<DownBkgID>Res.ControlBox.ToolButton</DownBkgID>
+						<UseBitmap>true</UseBitmap>
+					</attr>
+
+				</obj>
+				<obj id="ControlBox.MiniButton" class="As.button">
+					<attr>
+						<left>728</left>
+						<top>17</top>
+						<width>16</width>
+						<height>16</height>
+						<NormalBkgID>Res.ControlBox.MiniButton</NormalBkgID>
+						<DownBkgID>Res.ControlBox.MiniButton</DownBkgID>
+						<HoverBkgID>Res.ControlBox.MiniButton.Hover</HoverBkgID>
+						<UseBitmap>true</UseBitmap>
+					</attr>
+					<eventlist>
+						<event name="OnClick" file="MainWnd.xml.lua" func="Navi_OnMiniButtonClick" />
+					</eventlist>
+				</obj>
+				
+
+
+				<obj id="NaviBar" class="As.NaviBar">
+					<attr>
+						<left>450</left>
+						<top>54</top>
+						<width>400</width>
+						<height>40</height>
+					</attr>
+					<eventlist>
+						<event name="OnNavi" file="MainWnd.xml.lua" func="MetroButtonClick" />
+					</eventlist>
+				</obj>
+
+
+
+
+				<obj id="BackGround" class="ImageObject">
+					<attr>
+						<left>10</left>
+						<top>10</top>
+						<width>820</width>
+						<height>540</height>
+						<limitchild>1</limitchild >
+					</attr>
+					<children>
+
+
+						<obj id="Metro.Home" class="As.Metro.Home">
+							<attr>
+								<left>70</left>
+								<top>140</top>
+								<width>father.width</width>
+								<height>father.height</height>
+							</attr>	
+							<eventlist>
+								<event name="OnClickFunctionButton" file="MainWnd.xml.lua" func="MetroButtonClick" />
+							</eventlist>
+						</obj>
+
+
+						<obj id="Metro.Scanning" class="As.Metro.Scanning">
+							<attr>
+								<zorder>100</zorder>
+								<left>82</left>
+								<top>158</top>
+								<width>684</width>
+								<height>286</height>
+							</attr>	
+						</obj>
+
+						<obj id="Metro.Update" class="As.Metro.Update">
+							<attr>
+								<zorder>100</zorder>
+								<left>82</left>
+								<top>158</top>
+								<width>684</width>
+								<height>286</height>
+							</attr>	
+						</obj>
+
+					</children>	
+				</obj>	
+			</children>	
+		</obj>
+	</objtreetemplate>
+
+	<hostwndtemplate id="As.Wnd" class="FrameHostWnd">
+		<attr> 
+			<mainwnd>1</mainwnd>
+			<title>侦锐反病毒</title>
+			<layered>1</layered>
+			<left>200</left> 
+			<top>100</top>
+			<width>840</width>
+			<height>560</height>
+			<cacheleft>0</cacheleft> 
+			<cachetop>0</cachetop>
+
+			<cachewidth>1000</cachewidth>
+			<cacheheight>720</cacheheight>
+			<center>1</center>
+			<topmost>0</topmost>
+			<visible>1</visible>
+			<enable>1</enable>
+			<active>1</active>
+			<minwidth>100</minwidth>
+			<minheight>72</minheight>
+			<maxwidth>1000</maxwidth>
+			<maxheight>720</maxheight>
+			<appwindow>1</appwindow>
+			<fps>15</fps>
+		</attr>
+		<eventlist>
+			<event name="OnCreate" file="MainWnd.xml.lua" func="OnInitControl" />
+		</eventlist>
+	</hostwndtemplate>
+</xlue>

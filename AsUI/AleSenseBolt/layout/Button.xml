@@ -1,0 +1,98 @@
+<xlue>
+	<control class="As.button">
+		<attr_def>
+			<attr name="UseBitmap" type="bool">
+				<default>false</default>
+			</attr>
+			<attr name="NormalBkgID" type="string" >
+				<default>Res.Button.Nor</default>
+			</attr>
+			<attr name="DownBkgID" type="string" >
+				<default>Res.Button.Down</default>
+			</attr>
+			<attr name="DisableBkgID" type="string" >
+				<default>Res.Button.Disable</default>
+			</attr>
+			<attr name="HoverBkgID" type="string" >
+				<default>Res.Button.Hover</default>
+			</attr>
+			<attr name="Enable" type="bool" >
+				<default>true</default>
+			</attr>
+			<attr name="Text" type="string" />
+			<attr name="NowState" type="int" />
+		</attr_def>
+		<method_def>
+			<SetState file="Button.lua" func="SetState"/>
+			<SetText file="Button.lua" func="SetText" />
+		</method_def>
+		<event_def>
+			<OnClick />
+		</event_def>
+		<objtemplate>
+			<children>
+				<!--使用TextureObject代替ImageObject,可以更好的适应不同的填充大小-->
+				<!--定义控件时内部子对象的实际id会被控件类型名修饰，不同控件中可以使用相同的子对象id-->
+				<obj id="bkg_t" class="ImageObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+				</obj>
+				<obj id="bkg" class="TextureObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<width>father.width</width>
+						<height>father.height</height>
+					</attr>
+					<children>
+						<obj id="oldBkg_t" class="ImageObject">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>father.height</height>
+								<alpha>0</alpha>
+							</attr>
+						</obj>
+						<obj id="oldBkg" class="TextureObject">
+							<attr>
+								<left>0</left>
+								<top>0</top>
+								<width>father.width</width>
+								<height>father.height</height>
+								<alpha>0</alpha>
+							</attr>
+							<children>
+								<obj id="text" class ="TextObject">	
+									<attr>	
+										<left>0</left>
+										<top>0</top>
+										<width>father.width</width>
+										<height>father.height</height>
+										<font>Font.Button</font>
+										<halign>center</halign>
+										<valign>center</valign>
+										<textcolor>Color.White</textcolor>
+									</attr>
+								</obj>
+							</children>
+						</obj>
+					</children>
+				</obj>
+			</children>
+			<eventlist>
+				<event name="OnLButtonDown" file="Button.lua" func="OnLButtonDown" />
+				<event name="OnLButtonUp" file="Button.lua" func="OnLButtonUp" />
+				<event name="OnMouseMove" file="Button.lua" func="OnMouseMove" />	
+				<event name="OnMouseLeave" file="Button.lua" func="OnMouseLeave" />	
+				<event name="OnBind" file="Button.lua" func="OnBind" />
+				<!--当按钮有焦点的时候，按下空格键也可以触发OnClick,加上试下?-->
+			</eventlist>
+		</objtemplate>	
+	</control>
+
+</xlue>

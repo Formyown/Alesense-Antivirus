@@ -1,0 +1,96 @@
+<xlue>
+	<control class="As.MetroDisplay">
+		<attr_def>
+			<attr name="Text" type="string">
+				<default> </default>
+			</attr>
+			<attr name="Title" type="string">
+				<default> </default>
+			</attr>
+		</attr_def>
+		<method_def>
+			<SetTitle file="MetroDisplayObject.xml.lua" func="SetTitle"/>
+			<SetText file="MetroDisplayObject.xml.lua" func="SetText"/>
+		</method_def>
+		<objtemplate>
+			<children>	
+				<obj id="Rect" class="RectangleObject">
+					<attr>
+						<left>0</left>
+						<top>0</top>
+						<height>father.height</height>
+						<width>father.width</width>
+						<brushcolor>Color.MetroBlack</brushcolor>
+						<pencolor>Color.Blue</pencolor>
+						<pen>Pen.1px</pen>
+						<brush>Brush</brush>
+						<srcpt>0,0</srcpt>
+						<destpt>father.width,father.height</destpt>>
+					</attr>
+					<children>
+						<obj id="FillObj" class="FillObject">
+							<attr>
+								<left>1</left>
+								<top>1</top>
+								<height>father.height - 25 - 2</height>
+								<width>father.width - 2</width>
+								<filltype>Monochrome</filltype>
+								<srccolor>Color.MetroBlack</srccolor>
+								
+							</attr>
+							<children>
+								<obj id="TextObj" class="TextObject">
+									<attr>
+										<left>0</left>
+										<top>father.height - 60</top>
+										<width>father.width - 5</width>
+										<height>60</height>
+										<textcolor>Color.MetroGray</textcolor>
+										<font>Font.Nor50</font>
+										<halign>right</halign>
+										<valign>top</valign>
+										<text>Status</text>
+										
+									</attr>	
+								</obj>
+							</children>
+						</obj>
+						
+						
+						<obj id="FillObj" class="FillObject">
+							<attr>
+								<left>1</left>
+								<top>father.height - 25 - 1</top>
+								<height>25</height>
+								<width>father.width - 2</width>
+								<filltype>Monochrome</filltype>
+								<srccolor>Color.MetroGray</srccolor>
+							</attr>
+							
+							<children>
+								<obj id="TitleObj" class="TextObject">
+									<attr>
+										<left>0</left>
+										<top>0</top>
+										<width>father.width - 3</width>
+										<height>father.heigh</height>
+										<textcolor>Color.MetroText</textcolor>
+										<font>Font.Nor15</font>
+										<valign>center</valign>
+										<halign>right</halign>
+										<text>计算机状态</text>
+
+									</attr>	
+								</obj>
+							</children>
+						</obj>	
+					</children>
+				</obj>		
+			</children>
+			<eventlist>
+				<event name="OnInitControl" file="MetroDisplayObject.xml.lua" func="OnInitControl" />
+			</eventlist>
+		</objtemplate>
+	</control>
+
+</xlue>
